@@ -6,4 +6,4 @@ MySQL was successfully installed.
   * storageclass name {{ .Values.storageClassName }}
 {{- end}}
 * A Deployment called {{ .Release.Name }}-mysql-pvc has been created.
-
+* A ClusterIP Service called {{ .Release.Name }}-mysql-svc has been created.
