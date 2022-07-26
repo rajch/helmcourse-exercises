@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}-mysql-dep
+  labels:
+    program: helm
+    sample: mysql
+    app.kubernetes.io/name: {{ .Chart.Name }}
+    app.kubernetes.io/instace: {{ .Release.Name }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      program: helm
+      sample: mysql
+      layer: database
+      app.kubernetes.io/name: {{ .Chart.Name }}
+      app.kubernetes.io/instace: {{ .Release.Name }}
+  template:
+    metadata:
+      labels:
+        program: helm
+        sample: mysql
+        layer: database
+        app.kubernetes.io/name: {{ .Chart.Name }}
+        app.kubernetes.io/instace: {{ .Release.Name }}
+    spec:
+      volumes:
+        - name: dbvol
+          persistentVolumeClaim:
+            claimName: {{ .Release.Name }}-mysql-pvc
+      containers:
+        - name: c1
+          image: mysql:5.7
+          volumeMounts:
+            - name: dbvol
+              mountPath: /var/lib/mysql
+          env:
+            - name: MYSQL_ROOT_PASSWORD
+              value: {{ .Values.password }}

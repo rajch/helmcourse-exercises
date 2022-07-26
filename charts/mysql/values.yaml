@@ -1,3 +1,5 @@
 storage:
   Capacity: 1Gi
   StorageClassName:
+
+password: something
