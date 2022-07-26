@@ -1,5 +1,7 @@
-storage:
-  Capacity: 1Gi
-  StorageClassName:
+# storageCapacity is the minimum capacity for MySQL data storage
+storageCapacity: 1Gi
+# storageClassName is the StorageClass used for the MySQL PVC
+storageClassName:
 
+# password is the MySQL root user password
 password: something

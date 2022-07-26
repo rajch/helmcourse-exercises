@@ -1,7 +1,9 @@
 MySQL was successfully installed.
 
 * A PVC called {{ .Release.Name }}-mysql-pvc has been created, with:
-  * capacity of {{ default "1Gi" .Values.storage.Capacity }}
-{{- if .Values.storage.StorageClassName }}
-  * storageclass name {{ .Values.storage.StorageClassName }}
+  * capacity of {{ default "1Gi" .Values.storageCapacity }}
+{{- if .Values.storageClassName }}
+  * storageclass name {{ .Values.storageClassName }}
 {{- end}}
+* A Deployment called {{ .Release.Name }}-mysql-pvc has been created.
+
