@@ -13,3 +13,4 @@ spec:
   resources:
     requests:
       storage: {{ default "1Gi" .Values.storage.Capacity }}
+  {{ if .Values.storage.StorageClassName }}storageClassName: {{ .Values.storage.StorageClassName }}{{ end }}
