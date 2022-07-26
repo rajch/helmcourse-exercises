@@ -1,0 +1,5 @@
+This file is a template that gets rendered on successful install or dry-run.
+
+The template can use the following variables:
+
+{{ . | toYaml }}
