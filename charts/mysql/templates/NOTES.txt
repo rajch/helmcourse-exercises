@@ -1,5 +1,3 @@
-This file is a template that gets rendered on successful install or dry-run.
+MySQL was successfully installed.
 
-The template can use the following variables:
-
-{{ . | toYaml }}
+* A PVC called {{ .Release.Name }}-mysql-pvc has been created.
