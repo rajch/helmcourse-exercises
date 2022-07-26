@@ -5,8 +5,7 @@ metadata:
   labels:
     program: helm
     sample: mysql
-    app.kubernetes.io/name: {{ .Chart.Name }}
-    app.kubernetes.io/instace: {{ .Release.Name }}
+{{ include "mysql.labels" . | indent 4 }}
 spec:
   accessModes:
     - ReadWriteOnce

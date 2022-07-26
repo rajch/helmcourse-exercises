@@ -5,8 +5,7 @@ metadata:
   labels:
     program: helm
     sample: mysql
-    app.kubernetes.io/name: {{ .Chart.Name }}
-    app.kubernetes.io/instace: {{ .Release.Name }}
+{{ include "mysql.labels" . | indent 4 }}
 spec:
   replicas: 1
   selector:
@@ -14,16 +13,14 @@ spec:
       program: helm
       sample: mysql
       layer: database
-      app.kubernetes.io/name: {{ .Chart.Name }}
-      app.kubernetes.io/instace: {{ .Release.Name }}
+{{ include "mysql.labels" . | indent 6 }}
   template:
     metadata:
       labels:
         program: helm
         sample: mysql
         layer: database
-        app.kubernetes.io/name: {{ .Chart.Name }}
-        app.kubernetes.io/instace: {{ .Release.Name }}
+{{ include "mysql.labels" . | indent 8 }}
     spec:
       volumes:
         - name: dbvol
