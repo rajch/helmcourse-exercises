@@ -1,0 +1,28 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Helm Course Chart Repository</title>
+</head>
+<body>
+    <h1>Helm Course Chart Repo</h1>
+    <h2>Usage</h2>
+    <p>
+        <a href="https://helm.sh">Helm</a> must be installed to use the charts.  
+        Please refer to Helm's <a href="https://helm.sh/docs">documentation</a> to
+        get started.
+    </p>
+    <p>
+        Once Helm has been set up correctly, add the repo as follows:
+    </p>
+    <pre>
+        helm repo add &lt;alias&gt; https://rajware.github.io/helmcourse-exercises
+    </pre>
+    <p>
+        If you had already added this repo earlier, run <code>helm repo update</code>
+        to retrieve the latest versions of the packages.  You can then run 
+        <code>helm search repo &lt;alias&gt;</code> to see the charts.
+    </p>
+</body>
+</html>
