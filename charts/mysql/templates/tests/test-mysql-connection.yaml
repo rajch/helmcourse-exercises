@@ -1,3 +1,20 @@
+{{ $password := ""}}
+{{- if .Values.secretKey }}
+  {{ $secretName := "" }}
+  {{- if .Values.secretName }}
+    {{- $secretName = .Values.secretName }}
+  {{- else }}
+    {{- $secretName = cat .Release.Name "-mysql-sec" }}
+  {{- end }}
+  {{- $secretObject := lookup "v1" "Secret" .Release.Namespace $secretName}}
+  {{- if not $secretObject}}
+    {{- fail "Secret object not found" }}
+  {{- else }}
+    {{ $password = get $secretObject.data .Values.secretKey | b64dec }}
+  {{- end }}
+{{- else }}
+  {{ $password = .Values.password }}
+{{- end }}
 apiVersion: v1
 kind: Pod
 metadata:
@@ -15,5 +32,5 @@ spec:
         - "mysql"
         - "-h{{ .Release.Name}}-mysql-svc"
         - "-uroot"
-        - "-p{{ .Values.password }}"
+        - "-p{{ $password }}"
   restartPolicy: Never

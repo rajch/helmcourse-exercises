@@ -1,0 +1,22 @@
+{{- if .Values.secretKey  }}
+{{- if .Values.secretName }}
+  {{- $existingSecret := lookup "v1" "Secret" .Release.Namespace .Values.secretName  }}
+  {{- if not $existingSecret }}
+    {{ fail "faltu secretName kya deta hai BHADVE!"}}
+  {{- else }}
+    {{ $keyname := .Values.secretKey }}
+    {{- if not (hasKey $existingSecret.data $keyname) }}
+      {{ fail "Key $keyname does not exist in secret .Values.secretName "}}
+    {{- end }}
+  {{- end}}
+{{- else }}
+apiVersion: v1
+kind: Secret
+metadata:
+  name: {{ .Release.Name }}-mysql-sec
+  labels:
+{{ include "mysql.labels" . | indent 4}}
+data:
+  {{ .Values.secretKey }}: {{ .Values.password | b64enc }}
+{{- end }}
+{{- end }}

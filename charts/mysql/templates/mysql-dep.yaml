@@ -34,4 +34,15 @@ spec:
               mountPath: /var/lib/mysql
           env:
             - name: MYSQL_ROOT_PASSWORD
+{{- if .Values.secretKey }}
+              valueFrom:
+                secretKeyRef:
+{{- if .Values.secretName }}
+                  name: {{ .Values.secretName }}
+{{- else }}
+                  name: {{ .Release.Name }}-mysql-sec
+{{- end }}
+                  key: {{ .Values.secretKey }}
+{{- else }}
               value: {{ .Values.password }}
+{{- end }}
