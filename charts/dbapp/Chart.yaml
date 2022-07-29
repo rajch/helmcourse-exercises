@@ -27,3 +27,4 @@ dependencies:
   - name: mysql
     version: 0.1.1
     repository:  https://rajware.github.io/helmcourse-exercises
+    alias: db
