@@ -1,6 +1,9 @@
 dependencies:
+- name: common
+  repository: https://rajware.github.io/helmcourse-exercises
+  version: 0.1.0
 - name: mysql
   repository: https://rajware.github.io/helmcourse-exercises
-  version: 0.2.0
-digest: sha256:21bbae964b336446656b9d48e65b700dad21b946061c48d799de0c9ae7ee0ce5
-generated: "2022-07-29T11:57:04.837263133+05:30"
+  version: 0.2.1
+digest: sha256:5d85f88f1fd510ac35acc430eaa0315c15dbe6a7815644e0d6e6797a64df1001
+generated: "2022-07-29T13:31:02.473959236+05:30"

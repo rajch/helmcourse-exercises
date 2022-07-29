@@ -5,14 +5,14 @@ metadata:
   labels:
     program: helm
     sample: dbapp
-{{ include "mysql.labels" . | indent 4}}
+{{ include "common.labels" . | indent 4}}
 spec:
   type: {{ default "NodePort" .Values.service.type }}
   selector:
     program: helm
     sample: dbapp
     layer: frontend
-{{ include "mysql.labels" . | indent 4}}
+{{ include "common.labels" . | indent 4}}
   ports:
     - name: adminer
       port: 8080

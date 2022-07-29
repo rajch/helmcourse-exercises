@@ -5,7 +5,7 @@ metadata:
   labels:
     program: helm
     sample: dbapp
-{{ include "mysql.labels" . | indent 4 }}
+{{ include "common.labels" . | indent 4 }}
 spec:
   replicas: 1
   selector:
@@ -13,14 +13,14 @@ spec:
       program: helm
       sample: dbapp
       layer: frontend
-{{ include "mysql.labels" . | indent 6 }}
+{{ include "common.labels" . | indent 6 }}
   template:
     metadata:
       labels:
         program: helm
         sample: dbapp
         layer: frontend
-{{ include "mysql.labels" . | indent 8 }}
+{{ include "common.labels" . | indent 8 }}
     spec:
       containers:
         - name: webserver
