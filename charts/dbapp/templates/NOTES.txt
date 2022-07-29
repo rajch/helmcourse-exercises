@@ -7,5 +7,5 @@ You can run the following command to see where to access it:
 {{- end}}
 
 {{- if contains "NodePort" .Values.service.type}}
-  kubectl get svc {{ .Release.Name }}-adminer-svc -o go-template="http://<any node address>:{{ `{{ (index .spec.ports 0).port }}` }}"
+  kubectl get svc {{ .Release.Name }}-adminer-svc -o go-template="http://<any node address>:{{ `{{ (index .spec.ports 0).nodePort }}` }}"
 {{- end}}

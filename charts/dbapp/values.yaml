@@ -14,7 +14,7 @@ db:
   storageClassName:
 
   # password is the MySQL root user password
-  password: something
+  password: anything
 
   # secretKey is the name of a key in a secret object. 
   # If secretKey is specified, but not secretName, the chart will 
