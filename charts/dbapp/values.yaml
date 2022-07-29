@@ -1,0 +1,7 @@
+# service provides properties to control the service that exposes Adminer
+service:
+  # type can be NodePort or LoadBalancer
+  type: NodePort
+  # nodePort specifies the NodePort to be used to expose Adminer.
+  # If left blank, a random port will be chosen by Kubernetes
+  nodePort:

@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Release.Name }}-adminer-svc
+  labels:
+    program: helm
+    sample: dbapp
+{{ include "mysql.labels" . | indent 4}}
+spec:
+  type: {{ default "NodePort" .Values.service.type }}
+  selector:
+    program: helm
+    sample: dbapp
+    layer: frontend
+{{ include "mysql.labels" . | indent 4}}
+  ports:
+    - name: adminer
+      port: 8080
+{{- if .Values.service.nodePort }}
+      nodePort: {{ .Values.service.nodePort }}
+{{- end }}
+ 
