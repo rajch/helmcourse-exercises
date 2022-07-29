@@ -23,8 +23,10 @@ version: 0.1.0
 # It is recommended to use it with quotes.
 appVersion: "adminer: 4.7,mysql: 5,7"
 
+icon: https://rajware.github.io/helmcourse-exercises/img/helmcourse-adminer.svg
+
 dependencies:
   - name: mysql
-    version: 0.1.1
+    version: 0.2.0
     repository:  https://rajware.github.io/helmcourse-exercises
     alias: db
