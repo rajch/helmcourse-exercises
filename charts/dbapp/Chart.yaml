@@ -30,3 +30,5 @@ dependencies:
     version: 0.2.0
     repository:  https://rajware.github.io/helmcourse-exercises
     alias: db
+    tags:
+      - include-db

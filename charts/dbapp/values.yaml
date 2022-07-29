@@ -30,3 +30,9 @@ db:
   # the chart will fail. If secretName is specified, but not 
   # secretKey, it will be ignored.
   secretName:
+
+
+# tags allows us to control inclusion of subcharts
+tags:
+  # include-db specifies if the mysql sub-chart will be included
+  include-db: true
