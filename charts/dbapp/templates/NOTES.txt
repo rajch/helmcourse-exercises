@@ -1,0 +1,11 @@
+Adminer has been succesfully installed.
+
+You can run the following command to see where to access it:
+
+{{- if contains "LoadBalancer" .Values.service.type}}
+  kubectl get svc {{ .Release.Name }}-adminer-svc -o go-template="http://{{ `{{ index .spec.externalIPs 0 }}` }}:{{ `{{ (index .spec.ports 0).port }}` }}"
+{{- end}}
+
+{{- if contains "NodePort" .Values.service.type}}
+  kubectl get svc {{ .Release.Name }}-adminer-svc -o go-template="http://<any node address>:{{ `{{ (index .spec.ports 0).port }}` }}"
+{{- end}}
