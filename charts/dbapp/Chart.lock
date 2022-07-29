@@ -1,0 +1,6 @@
+dependencies:
+- name: mysql
+  repository: https://rajware.github.io/helmcourse-exercises
+  version: 0.1.1
+digest: sha256:9bbf6a023fb06fdb9ce298e6ad28dd7a26337c3a1260a4c6ff86f45c1a5e81ab
+generated: "2022-07-29T08:59:50.965329689+05:30"
