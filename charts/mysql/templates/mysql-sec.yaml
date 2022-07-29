@@ -15,7 +15,7 @@ kind: Secret
 metadata:
   name: {{ .Release.Name }}-mysql-sec
   labels:
-{{ include "mysql.labels" . | indent 4}}
+{{ include "common.labels" . | indent 4}}
 data:
   {{ .Values.secretKey }}: {{ .Values.password | b64enc }}
 {{- end }}

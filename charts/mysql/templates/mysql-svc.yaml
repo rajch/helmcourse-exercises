@@ -5,14 +5,14 @@ metadata:
   labels:
     program: helm
     sample: mysql
-{{ include "mysql.labels" . | indent 4 }}
+{{ include "common.labels" . | indent 4 }}
 spec:
   type: ClusterIP
   selector:
     program: helm
     sample: mysql
     layer: database
-{{ include "mysql.labels" . | indent 4 }}
+{{ include "common.labels" . | indent 4 }}
   ports:
     - name: mysql
       port: 3306

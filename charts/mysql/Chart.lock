@@ -1,0 +1,6 @@
+dependencies:
+- name: common
+  repository: https://rajware.github.io/helmcourse-exercises
+  version: 0.1.0
+digest: sha256:8be1c385cae8016e7752bb090e5d27a9496ec4907a75b8589a37ac5b64fe8f0b
+generated: "2022-07-29T13:18:43.913011754+05:30"
