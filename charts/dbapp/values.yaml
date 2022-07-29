@@ -31,6 +31,11 @@ db:
   # secretKey, it will be ignored.
   secretName:
 
+# dbServiceName allows us to provide a name for the service that
+# Adminer will be configured to connect to by default. It is used
+# only if MySQL is not included by setting tags.include-db to 
+# false, ignored otherwise. If it is used, it cannot be empty.
+dbServiceName:
 
 # tags allows us to control inclusion of subcharts
 tags:

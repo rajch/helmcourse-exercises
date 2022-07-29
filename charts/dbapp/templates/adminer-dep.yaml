@@ -27,4 +27,4 @@ spec:
           image: adminer:4.7
           env:
             - name: ADMINER_DEFAULT_SERVER
-              value: {{ .Release.Name }}-mysql-svc
+              value: {{ include "dbapp.serviceName" . }}
