@@ -7,3 +7,11 @@ MySQL was successfully installed.
 {{- end}}
 * A Deployment called {{ .Release.Name }}-mysql-dep has been created.
 * A ClusterIP Service called {{ .Release.Name }}-mysql-svc has been created.
+{{- if .Values.secretKey }}
+  {{- if not .Values.secretName }}
+* A Secret object called {{ .Release.Name }}-mysql-sec has been created. It
+  contains the database root password.
+  {{- else }}
+* The database root password is available in a Secret object called {{ .Values.secretName}}
+  {{- end }}
+{{- end }}

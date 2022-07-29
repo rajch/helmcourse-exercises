@@ -5,10 +5,13 @@
     {{- $secretName = .Values.secretName }}
   {{- else }}
     {{- $secretName = cat .Release.Name "-mysql-sec" }}
+    {{- $password = .Values.password }}
   {{- end }}
   {{- $secretObject := lookup "v1" "Secret" .Release.Namespace $secretName}}
   {{- if not $secretObject}}
-    {{- fail "Secret object not found" }}
+    {{- if not $password }}
+      {{- fail "Secret object not found" }}
+    {{- end }}
   {{- else }}
     {{ $password = get $secretObject.data .Values.secretKey | b64dec }}
   {{- end }}
