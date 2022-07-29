@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: dbapp-np
+  labels:
+    program: helm
+    sample: dbapp
+spec:
+  policyTypes:
+    - Ingress
+  podSelector:
+    matchLabels:
+      program: helm
+      sample: mysql
+      layer: database
+  ingress:
+    - from:
+        - podSelector:
+            matchLabels:
+              program: helm
+              sample: dbapp
+              layer: frontend
+      ports:
+        - port: 3306
