@@ -41,3 +41,5 @@ dbServiceName:
 tags:
   # include-db specifies if the mysql sub-chart will be included
   include-db: true
+  # include-np specifies if a network policy will be included
+  include-np: true
