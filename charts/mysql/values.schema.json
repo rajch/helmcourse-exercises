@@ -1,0 +1,23 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "type": "object",
+    "properties": {
+        "password": {
+            "type": "string"
+        },
+        "secretKey": {
+            "type": ["string", "null"]
+        },
+        "secretName": {
+            "type": ["string", "null"]
+        },
+        "storageCapacity": {
+            "type": ["string"],
+            "pattern": "[0-9]+[EPTGMk]i?"
+        },
+        "storageClassName": {
+            "type": ["string", "null"]
+        }
+    },
+    "required": ["password", "storageCapacity"]
+}
