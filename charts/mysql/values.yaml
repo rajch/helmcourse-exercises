@@ -1,12 +1,12 @@
-# storageCapacity is the minimum capacity for MySQL data storage
+# -- storageCapacity is the minimum capacity for MySQL data storage
 storageCapacity: 1Gi
-# storageClassName is the StorageClass used for the MySQL PVC
+# -- storageClassName is the StorageClass used for the MySQL PVC
 storageClassName:
 
-# password is the MySQL root user password
+# -- password is the MySQL root user password
 password: something
 
-# secretKey is the name of a key in a secret object. 
+# -- secretKey is the name of a key in a secret object. 
 # If secretKey is specified, but not secretName, the chart will 
 # create a Secret called {{ .Release.Name}}-mysql-sec, and store 
 # the password in a key with this name.
@@ -14,7 +14,7 @@ password: something
 # with this name in a Secret with that name.
 secretKey:
 
-# secretName is name of an existing secret object. If specified,
+# -- secretName is name of an existing secret object. If specified,
 # the chart will look for a Secret with this name, and a key in
 # it with the name specified in secretKey. If it can't find it,
 # the chart will fail. If secretName is specified, but not 

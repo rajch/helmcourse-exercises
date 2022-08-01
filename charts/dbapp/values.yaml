@@ -1,22 +1,22 @@
-# service provides properties to control the service that exposes Adminer
+# -- service provides properties to control the service that exposes Adminer
 service:
-  # type can be NodePort or LoadBalancer
+  # -- type can be NodePort or LoadBalancer
   type: NodePort
-  # nodePort specifies the NodePort to be used to expose Adminer.
+  # -- nodePort specifies the NodePort to be used to expose Adminer.
   # If left blank, a random port will be chosen by Kubernetes
   nodePort:
 
-# db provides access to the embedded MySQL
+# -- db provides access to the embedded MySQL
 db:
-  # storageCapacity is the minimum capacity for MySQL data storage
+  # -- storageCapacity is the minimum capacity for MySQL data storage
   storageCapacity: 2Gi
-  # storageClassName is the StorageClass used for the MySQL PVC
+  # -- storageClassName is the StorageClass used for the MySQL PVC
   storageClassName:
 
-  # password is the MySQL root user password
+  # -- password is the MySQL root user password
   password: anything
 
-  # secretKey is the name of a key in a secret object. 
+  # -- secretKey is the name of a key in a secret object. 
   # If secretKey is specified, but not secretName, the chart will 
   # create a Secret called {{ .Release.Name}}-mysql-sec, and store 
   # the password in a key with this name.
@@ -24,22 +24,22 @@ db:
   # with this name in a Secret with that name.
   secretKey:
 
-  # secretName is name of an existing secret object. If specified,
+  # -- secretName is name of an existing secret object. If specified,
   # the chart will look for a Secret with this name, and a key in
   # it with the name specified in secretKey. If it can't find it,
   # the chart will fail. If secretName is specified, but not 
   # secretKey, it will be ignored.
   secretName:
 
-# dbServiceName allows us to provide a name for the service that
+# -- dbServiceName allows us to provide a name for the service that
 # Adminer will be configured to connect to by default. It is used
 # only if MySQL is not included by setting tags.include-db to 
 # false, ignored otherwise. If it is used, it cannot be empty.
 dbServiceName:
 
-# tags allows us to control inclusion of subcharts
+# -- tags allows us to control inclusion of subcharts
 tags:
-  # include-db specifies if the mysql sub-chart will be included
+  # -- include-db specifies if the mysql sub-chart will be included
   include-db: true
-  # include-np specifies if a network policy will be included
+  # -- include-np specifies if a network policy will be included
   include-np: true
