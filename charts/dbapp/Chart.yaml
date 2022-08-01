@@ -15,7 +15,7 @@ type: application
 # This is the chart version. This version number should be incremented each time you make changes
 # to the chart and its templates, including the app version.
 # Versions are expected to follow Semantic Versioning (https://semver.org/)
-version: 0.3.2
+version: 0.3.3
 
 # This is the version number of the application being deployed. This version number should be
 # incremented each time you make changes to the application. Versions are not expected to
@@ -23,15 +23,15 @@ version: 0.3.2
 # It is recommended to use it with quotes.
 appVersion: "adminer: 4.7,mysql: 5.7"
 
-icon: https://rajware.github.io/helmcourse-exercises/img/helmcourse-adminer.svg
+icon: https://rajch.github.io/helmcourse-exercises/img/helmcourse-adminer.svg
 
 dependencies:
   - name: common
-    version: 0.1.0
-    repository: https://rajware.github.io/helmcourse-exercises
+    version: 0.1.1
+    repository: https://rajch.github.io/helmcourse-exercises
   - name: mysql
-    version: 0.2.2
-    repository:  https://rajware.github.io/helmcourse-exercises
+    version: 0.2.4
+    repository:  https://rajch.github.io/helmcourse-exercises
     alias: db
     tags:
       - include-db
