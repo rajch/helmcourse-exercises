@@ -1,0 +1,69 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "type": "object",
+    "properties": {
+        "db": {
+            "type": "object",
+            "properties": {
+                "password": {
+                    "type": "string"
+                },
+                "secretKey": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "secretName": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "storageCapacity": {
+                    "type": [
+                        "string"
+                    ],
+                    "pattern": "[0-9]+[EPTGMk]i?"
+                },
+                "storageClassName": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                }
+            },
+            "required": [
+                "password",
+                "storageCapacity"
+            ]
+        },
+        "dbServiceName": {
+            "type": ["string", "null"]
+        },
+        "service": {
+            "type": "object",
+            "properties": {
+                "nodePort": {
+                    "type": ["integer","null"],
+                    "minimum": 0
+                },
+                "type": {
+                    "enum": ["NodePort", "LoadBalancer"]
+                }
+            },
+            "required": ["type"]
+        },
+        "tags": {
+            "type": "object",
+            "properties": {
+                "include-db": {
+                    "type": "boolean"
+                },
+                "include-np": {
+                    "type": "boolean"
+                }
+            }
+        }
+    }
+}
