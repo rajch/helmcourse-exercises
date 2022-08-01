@@ -2,7 +2,7 @@ apiVersion: v1
 entries:
   common:
   - apiVersion: v2
-    created: "2022-07-29T14:57:43.997032054+05:30"
+    created: "2022-08-01T16:41:26.237871701+05:30"
     description: Library chart for Rajware Helm course
     digest: d159b9e313649c063357027dceb1403c33023fbb24ac12a0b2aa2904483fb42d
     icon: https://rajware.github.io/helmcourse-exercises/img/helmcourse-common.svg
@@ -14,7 +14,7 @@ entries:
   dbapp:
   - apiVersion: v2
     appVersion: 'adminer: 4.7,mysql: 5.7'
-    created: "2022-07-29T14:57:43.999364651+05:30"
+    created: "2022-08-01T16:41:26.243707566+05:30"
     dependencies:
     - name: common
       repository: https://rajware.github.io/helmcourse-exercises
@@ -35,7 +35,7 @@ entries:
     version: 0.3.0
   - apiVersion: v2
     appVersion: 'adminer: 4.7,mysql: 5.7'
-    created: "2022-07-29T14:57:43.998464169+05:30"
+    created: "2022-08-01T16:41:26.24130599+05:30"
     dependencies:
     - name: common
       repository: https://rajware.github.io/helmcourse-exercises
@@ -56,7 +56,7 @@ entries:
     version: 0.2.0
   - apiVersion: v2
     appVersion: 'adminer: 4.7,mysql: 5,7'
-    created: "2022-07-29T14:57:43.997651008+05:30"
+    created: "2022-08-01T16:41:26.23880484+05:30"
     dependencies:
     - alias: db
       name: mysql
@@ -73,7 +73,22 @@ entries:
   mysql:
   - apiVersion: v2
     appVersion: "5.7"
-    created: "2022-07-29T14:57:44.00059036+05:30"
+    created: "2022-08-01T16:41:26.246732819+05:30"
+    dependencies:
+    - name: common
+      repository: https://rajware.github.io/helmcourse-exercises
+      version: 0.1.0
+    description: MySQL packaged in Rajware Helm course
+    digest: a7af1081001c40488fa947e46700dd9aec3a833816603434376c4b53531134a4
+    icon: https://rajware.github.io/helmcourse-exercises/img/helmcourse-mysql.svg
+    name: mysql
+    type: application
+    urls:
+    - mysql-0.2.2.tgz
+    version: 0.2.2
+  - apiVersion: v2
+    appVersion: "5.7"
+    created: "2022-08-01T16:41:26.24625704+05:30"
     dependencies:
     - name: common
       repository: https://rajware.github.io/helmcourse-exercises
@@ -88,7 +103,7 @@ entries:
     version: 0.2.1
   - apiVersion: v2
     appVersion: "5.7"
-    created: "2022-07-29T14:57:44.000150535+05:30"
+    created: "2022-08-01T16:41:26.245680289+05:30"
     description: MySQL packaged in Rajware Helm course
     digest: 4319d110f1640a4c403dc98ca9d61b7ebc4cc6938bd2017cb075f4ce093940ed
     icon: https://rajware.github.io/helmcourse-exercises/img/helmcourse-mysql.svg
@@ -99,7 +114,7 @@ entries:
     version: 0.2.0
   - apiVersion: v2
     appVersion: "5.7"
-    created: "2022-07-29T14:57:43.999883244+05:30"
+    created: "2022-08-01T16:41:26.244994709+05:30"
     description: MySQL packaged in Rajware Helm course
     digest: 5108351021faddc6e8d33a8e3fa55538f868c9695368b36715c065d189170956
     icon: https://rajware.github.io/helmcourse-exercises/img/helmcourse-mysql.svg
@@ -110,7 +125,7 @@ entries:
     version: 0.1.1
   - apiVersion: v2
     appVersion: "5.7"
-    created: "2022-07-29T14:57:43.999647142+05:30"
+    created: "2022-08-01T16:41:26.244339387+05:30"
     description: MySQL packaged in Rajware Helm course
     digest: 278b4eae192f9f5850d49afcbaeb0c24f0f7fbdf3d03233974a2295cb95fb574
     name: mysql
@@ -118,4 +133,4 @@ entries:
     urls:
     - mysql-0.1.0.tgz
     version: 0.1.0
-generated: "2022-07-29T14:57:43.996598002+05:30"
+generated: "2022-08-01T16:41:26.235638277+05:30"
