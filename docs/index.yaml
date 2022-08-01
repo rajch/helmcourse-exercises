@@ -2,7 +2,7 @@ apiVersion: v1
 entries:
   common:
   - apiVersion: v2
-    created: "2022-08-01T20:07:17.929464384+05:30"
+    created: "2022-08-01T20:15:02.31509699+05:30"
     description: Library chart for Rajware Helm course
     digest: 6300a078ce87baca949d73aec82b3f34666a04931f0ef36c4cc778d34436f0ee
     icon: https://rajch.github.io/helmcourse-exercises/img/helmcourse-common.svg
@@ -11,6 +11,32 @@ entries:
     urls:
     - common-0.1.1.tgz
     version: 0.1.1
+  dbapp:
+  - annotations:
+      artifacthub.io/maintainers: |-
+        - name: rajch
+          email: rajch@hotmail.com
+    apiVersion: v2
+    appVersion: 'adminer: 4.7,mysql: 5.7'
+    created: "2022-08-01T20:15:02.316616304+05:30"
+    dependencies:
+    - name: common
+      repository: https://rajch.github.io/helmcourse-exercises
+      version: 0.1.1
+    - alias: db
+      name: mysql
+      repository: https://rajch.github.io/helmcourse-exercises
+      tags:
+      - include-db
+      version: 0.2.4
+    description: Adminer front-end, MySQL backend packaged in Rajware Helm course
+    digest: cf145759bbf15da1e7ace23f8b448c621d0f6a3d9624f8db5ccde2921ab87b5f
+    icon: https://rajch.github.io/helmcourse-exercises/img/helmcourse-adminer.svg
+    name: dbapp
+    type: application
+    urls:
+    - dbapp-0.3.3.tgz
+    version: 0.3.3
   mysql:
   - annotations:
       artifacthub.io/maintainers: |-
@@ -18,7 +44,7 @@ entries:
           email: rajch@hotmail.com
     apiVersion: v2
     appVersion: "5.7"
-    created: "2022-08-01T20:07:17.930949092+05:30"
+    created: "2022-08-01T20:15:02.317391227+05:30"
     dependencies:
     - name: common
       repository: https://rajch.github.io/helmcourse-exercises
@@ -31,4 +57,4 @@ entries:
     urls:
     - mysql-0.2.4.tgz
     version: 0.2.4
-generated: "2022-08-01T20:07:17.929074727+05:30"
+generated: "2022-08-01T20:15:02.31468959+05:30"
