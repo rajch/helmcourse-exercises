@@ -13,7 +13,7 @@
         },
         "storageCapacity": {
             "type": ["string"],
-            "pattern": "[0-9]+[EPTGMk]i?"
+            "pattern": "^[0-9]+[EPTGMk]i?$"
         },
         "storageClassName": {
             "type": ["string", "null"]
